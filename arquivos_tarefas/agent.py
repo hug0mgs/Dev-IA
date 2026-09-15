@@ -2,7 +2,7 @@ import ollama
 import json
 
 MODEL = "llama3.2"
-PERGUNTA = "Quais os nomes dos times que estão na base de dados? E qual time tem a menor probabilidade de Subir à Série B?"
+PERGUNTA = "Qual a probabilidade do Paysandu subir à Série B segundo os dados disponíveis?"
 MAX_PASSOS = 10
 SYSTEM = "Você é um especialista em futebol brasileiro. NUNCA invente números ou estatísticas, use as tools."
 
@@ -28,12 +28,12 @@ TOOLS = [
     {"type": "function", "function": {
 
     "name": "listar_times",
-    "description": "Listar os nomes dos times",
+    "description": "Listar os nomes dos times da Série C",
     "parameters": {"type": "object", "properties": {}}}},
 
     {"type": "function", "function": {
      "name": "acesso_prob",
-     "description": "Lista dados sobre um time específico",
+     "description": "prob",
      "parameters": {"type": "object",
                     "properties": {"time": {"type": "string"}},
                         "required": ["time"]}}}
